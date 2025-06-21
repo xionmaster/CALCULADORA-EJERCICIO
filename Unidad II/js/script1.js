@@ -13,5 +13,20 @@ function cargarselect(){
 
 function cambio(){
     //Debe escribir el contenido del elemento seleccionado en el select meses
+    const selectedMonth = (document.getElementById('meses')).value;
     //Escribir en la caja de texto Mostrar y en el select Month
+    const mostrar = document.getElementById('mostrar');
+    mostrar.value = selectedMonth;
+}
+function createOption(value) {
+    const opt = document.createElement('option');
+    opt.text = value;
+    opt.value = value;
+    return opt;
+}
+function mostrarMes() {
+    const mesSeleccionado = (document.getElementById('mostrar')).value;
+    const nuevaListaDeMeses = document.getElementById('month');
+    const nuevoMesAgregable = createOption(mesSeleccionado);
+    nuevaListaDeMeses.add(nuevoMesAgregable);
 }
